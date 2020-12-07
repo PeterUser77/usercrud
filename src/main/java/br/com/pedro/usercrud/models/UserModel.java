@@ -44,5 +44,41 @@ public class UserModel extends ManagerFactory {
 		
 		return users;
 	}
+
+	public boolean delete(User user) {
+		boolean result = false;
+	
+		try {
+			em.getTransaction().begin();
+			user = em.find(user.getClass(), user.getId());
+			em.remove(user);
+			em.getTransaction().commit();
+			result = true;
+			
+			return result;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			
+			return result;
+		} finally {
+			em.close();
+		}
+	}
+
+	public boolean edit(User user) {
+		boolean result = false;
+		
+		try {
+			em.getTransaction().begin();
+			em.merge(user);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+		} finally {
+			em.close();
+		}
+		
+		return result;
+	}
 	
 }
