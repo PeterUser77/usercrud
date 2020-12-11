@@ -17,6 +17,7 @@
 	<div style="padding-top: 3%;" class="container">
 	
 		<h1>User Management</h1>
+		
 		<div style="padding-top: 3%;" class="container">
 			<p> <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#registerModal">Register</button> <p/>
 			<table class="table">

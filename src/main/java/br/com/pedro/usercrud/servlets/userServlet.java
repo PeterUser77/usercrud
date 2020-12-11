@@ -13,10 +13,10 @@ import br.com.pedro.usercrud.entities.User;
 import br.com.pedro.usercrud.models.UserModel;
 
 @WebServlet("/user")
-public class userServlet extends HttpServlet {
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public userServlet() {
+	public UserServlet() {
 		super();
 	}
 
@@ -42,7 +42,6 @@ public class userServlet extends HttpServlet {
 			doPostEdit(request, response);
 		}
 	}
-	
 	
 	private void doPostEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user = new User();
@@ -89,7 +88,6 @@ public class userServlet extends HttpServlet {
 		}
 		response.sendRedirect("user");
 	}
-	
 	
 	private void doGetFindAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
